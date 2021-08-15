@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use App\Models\Tasks;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -39,6 +40,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $verify_data = [
+            'name' => 'required',
+        ];
+
+        $validator = Validator::make($data, $verify_data);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
 
         if(!empty($data['id'])){
             $category = Categories::find($data['id']);
