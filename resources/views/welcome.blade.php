@@ -23,7 +23,7 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
-            <a href="{{route('question1')}}" style="padding-right:30px;">Question 1</a>
+            <a href="{{route('question1.list')}}" style="padding-right:30px;">Question 1</a>
             <a href="{{route('question2')}}" style="padding-right:30px;">Question 2</a>
             <a href="{{route('question3')}}">Question 3</a>
         </div>
